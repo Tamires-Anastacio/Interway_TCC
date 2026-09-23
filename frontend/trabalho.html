@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intercâmbio a Trabalho | InterWay</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <a href="index.html">InterWay</a>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="mais.html">Mais</a>
+        </nav>
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <section class="introducao">
+            <h1>Intercâmbio a Trabalho</h1>
+
+            <p>
+                Encontre oportunidades para trabalhar no exterior,
+                conhecer novas culturas e desenvolver sua experiência profissional.
+            </p>
+        </section>
+
+
+        <!-- Tipos de trabalho -->
+        <section class="trabalhos">
+
+            <h2>Encontre seu tipo de oportunidade</h2>
+
+            <div class="cards-trabalho">
+
+                <div class="card-trabalho">
+                    <h3>💼 Trabalho Temporário</h3>
+
+                    <p>
+                        Trabalhe durante um período determinado enquanto
+                        vivencia uma experiência internacional.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+
+                <div class="card-trabalho">
+                    <h3>☀️ Trabalho de Temporada</h3>
+
+                    <p>
+                        Encontre empregos sazonais em diferentes destinos
+                        durante períodos de alta demanda.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+
+                <div class="card-trabalho">
+                    <h3>🏨 Hotelaria e Turismo</h3>
+
+                    <p>
+                        Conheça oportunidades em hotéis, restaurantes,
+                        resorts e áreas relacionadas ao turismo.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+
+                <div class="card-trabalho">
+                    <h3>👶 Au Pair</h3>
+
+                    <p>
+                        More com uma família anfitriã e ajude nos cuidados
+                        com crianças durante sua experiência.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+
+                <div class="card-trabalho">
+                    <h3>🌎 Programas Internacionais</h3>
+
+                    <p>
+                        Explore programas que combinam experiência
+                        profissional e vivência internacional.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+
+                <div class="card-trabalho">
+                    <h3>🎓 Estágio no Exterior</h3>
+
+                    <p>
+                        Desenvolva experiência profissional através
+                        de oportunidades de estágio internacional.
+                    </p>
+
+                    <a href="#">Ver oportunidades</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Como funciona -->
+        <section class="informacoes">
+
+            <h2>Como funciona?</h2>
+
+            <div class="etapas">
+
+                <div>
+                    <h3>1. Escolha o tipo de trabalho</h3>
+
+                    <p>
+                        Encontre uma modalidade de trabalho que
+                        combine com seus objetivos.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>2. Escolha o destino</h3>
+
+                    <p>
+                        Pesquise países e oportunidades disponíveis
+                        para o seu perfil.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>3. Encontre uma oportunidade</h3>
+
+                    <p>
+                        Consulte as vagas disponíveis e encontre
+                        uma oportunidade de intercâmbio.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Voltar -->
+        <a href="mais.html">← Voltar para Mais</a>
+
+    </main>
+
+    <style>
+        .introducao {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.introducao h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.introducao p {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* CARDS DE TRABALHO */
+
+.trabalhos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.trabalhos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cards-trabalho {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-trabalho {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: 0.2s;
+}
+
+.card-trabalho:hover {
+    transform: translateY(-5px);
+}
+
+.card-trabalho h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.card-trabalho p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-trabalho a {
+    display: inline-block;
+    margin-top: 15px;
+
+    padding: 10px 16px;
+
+    background-color: #333;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.card-trabalho a:hover {
+    background-color: #555;
+}
+
+
+/* COMO FUNCIONA */
+
+.informacoes {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px 20px;
+}
+
+.informacoes h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.etapas div {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.etapas h3 {
+    margin-bottom: 10px;
+}
+
+.etapas p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* BOTÃO VOLTAR */
+
+main > a {
+    display: block;
+
+    width: fit-content;
+    margin: 40px auto;
+
+    text-decoration: none;
+    color: #333;
+}
+
+main > a:hover {
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    .cards-trabalho {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .etapas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .cards-trabalho {
+        grid-template-columns: 1fr;
+    }
+
+    .introducao h1 {
+        font-size: 30px;
+    }
+}
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Host Families | InterWay</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <a href="index.html">InterWay</a>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="mais.html">Mais</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Introdução -->
+        <section class="introducao">
+
+            <h1>Host Families</h1>
+
+            <p>
+                Encontre uma família anfitriã e viva uma experiência
+                internacional enquanto conhece uma nova cultura.
+            </p>
+
+        </section>
+
+
+        <!-- O que é -->
+        <section class="sobre-host">
+
+            <h2>O que é uma Host Family?</h2>
+
+            <p>
+                Host Family é uma família anfitriã que recebe estudantes
+                ou intercambistas durante sua experiência no exterior.
+                Essa convivência permite conhecer melhor a cultura local
+                e praticar o idioma no dia a dia.
+            </p>
+
+        </section>
+
+
+        <!-- Opções -->
+        <section class="familias">
+
+            <h2>Encontre uma família</h2>
+
+            <div class="cards-familias">
+
+                <div class="card-familia">
+                    <h3>🏠 Família anfitriã</h3>
+
+                    <p>
+                        Viva com uma família local e conheça
+                        sua rotina e cultura.
+                    </p>
+
+                    <a href="#">Ver famílias</a>
+                </div>
+
+
+                <div class="card-familia">
+                    <h3>🍽️ Hospedagem com refeições</h3>
+
+                    <p>
+                        Encontre opções de hospedagem que
+                        incluem refeições durante sua estadia.
+                    </p>
+
+                    <a href="#">Ver famílias</a>
+                </div>
+
+
+                <div class="card-familia">
+                    <h3>🌎 Experiência cultural</h3>
+
+                    <p>
+                        Conheça os costumes locais convivendo
+                        com uma família do país escolhido.
+                    </p>
+
+                    <a href="#">Ver famílias</a>
+                </div>
+
+
+                <div class="card-familia">
+                    <h3>🗣️ Prática de idiomas</h3>
+
+                    <p>
+                        Pratique o idioma diariamente em situações
+                        reais de convivência.
+                    </p>
+
+                    <a href="#">Ver famílias</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Como funciona -->
+        <section class="informacoes">
+
+            <h2>Como funciona?</h2>
+
+            <div class="etapas">
+
+                <div>
+                    <h3>1. Escolha o destino</h3>
+
+                    <p>
+                        Escolha o país onde você gostaria
+                        de realizar seu intercâmbio.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>2. Encontre uma família</h3>
+
+                    <p>
+                        Consulte as famílias disponíveis
+                        e encontre uma opção adequada.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>3. Viva a experiência</h3>
+
+                    <p>
+                        Conheça uma nova cultura e aproveite
+                        sua experiência internacional.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Voltar -->
+        <a href="mais.html">← Voltar para Mais</a>
+
+    </main>
+
+    <style>
+        .sobre-host {
+    max-width: 900px;
+    margin: 20px auto 50px;
+    padding: 30px;
+    text-align: center;
+
+    background-color: white;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sobre-host h2 {
+    margin-bottom: 15px;
+}
+
+.sobre-host p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* FAMÍLIAS */
+
+.familias {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.familias h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cards-familias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card-familia {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: 0.2s;
+}
+
+.card-familia:hover {
+    transform: translateY(-5px);
+}
+
+.card-familia h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.card-familia p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-familia a {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 10px 18px;
+
+    background-color: #333;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.card-familia a:hover {
+    background-color: #555;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+    .cards-familias {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+
+</body>
+
+</html>

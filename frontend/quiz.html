@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | InterWay</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">InterWay</a>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="mais.html">Mais</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="quiz-container">
+
+            <h1>Qual intercâmbio combina com você?</h1>
+
+            <p class="quiz-introducao">
+                Responda às perguntas e descubra qual tipo de
+                intercâmbio pode combinar com seus interesses.
+            </p>
+
+
+            <!-- PERGUNTA 1 -->
+            <div class="pergunta">
+
+                <h2>1. Qual é o seu principal objetivo?</h2>
+
+                <button class="resposta" data-tipo="idiomas">
+                    🗣️ Aprender ou aperfeiçoar um idioma
+                </button>
+
+                <button class="resposta" data-tipo="trabalho">
+                    💼 Trabalhar e adquirir experiência profissional
+                </button>
+
+                <button class="resposta" data-tipo="highschool">
+                    🎓 Estudar em uma escola no exterior
+                </button>
+
+                <button class="resposta" data-tipo="hostfamily">
+                    🏠 Conhecer uma família e viver sua cultura
+                </button>
+
+            </div>
+
+
+            <!-- PERGUNTA 2 -->
+            <div class="pergunta">
+
+                <h2>2. Qual experiência mais combina com você?</h2>
+
+                <button class="resposta" data-tipo="idiomas">
+                    🌎 Conhecer pessoas de vários países
+                </button>
+
+                <button class="resposta" data-tipo="trabalho">
+                    💰 Ter uma experiência profissional
+                </button>
+
+                <button class="resposta" data-tipo="highschool">
+                    📚 Estudar e conhecer uma nova escola
+                </button>
+
+                <button class="resposta" data-tipo="hostfamily">
+                    ❤️ Fazer parte de uma família local
+                </button>
+
+            </div>
+
+
+            <!-- PERGUNTA 3 -->
+            <div class="pergunta">
+
+                <h2>3. Como você prefere passar seu tempo?</h2>
+
+                <button class="resposta" data-tipo="idiomas">
+                    🗣️ Conversando e praticando idiomas
+                </button>
+
+                <button class="resposta" data-tipo="trabalho">
+                    💼 Trabalhando e desenvolvendo habilidades
+                </button>
+
+                <button class="resposta" data-tipo="highschool">
+                    📖 Estudando e participando de atividades escolares
+                </button>
+
+                <button class="resposta" data-tipo="hostfamily">
+                    🏡 Convivendo com pessoas locais
+                </button>
+
+            </div>
+
+
+            <!-- PERGUNTA 4 -->
+            <div class="pergunta">
+
+                <h2>4. O que você gostaria de conhecer mais?</h2>
+
+                <button class="resposta" data-tipo="idiomas">
+                    🗣️ Um novo idioma
+                </button>
+
+                <button class="resposta" data-tipo="trabalho">
+                    🌎 O mercado de trabalho de outro país
+                </button>
+
+                <button class="resposta" data-tipo="highschool">
+                    🎓 O sistema educacional de outro país
+                </button>
+
+                <button class="resposta" data-tipo="hostfamily">
+                    🏠 A rotina de uma família estrangeira
+                </button>
+
+            </div>
+
+
+            <!-- RESULTADO -->
+
+            <section id="resultado" class="resultado">
+
+                <h2>Seu resultado</h2>
+
+                <h3 id="titulo-resultado"></h3>
+
+                <p id="texto-resultado"></p>
+
+                <a id="link-resultado" href="#">
+                    Conheça essa opção
+                </a>
+
+            </section>
+
+
+            <a href="mais.html" class="voltar">
+                ← Voltar para Mais
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/quiz.js"></script>
+
+    <style>
+        .quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.quiz-container > h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.quiz-introducao {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+
+/* PERGUNTAS */
+
+.pergunta {
+    background-color: white;
+
+    padding: 30px;
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pergunta h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* RESPOSTAS */
+
+.resposta {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+    margin-bottom: 12px;
+
+    background-color: #f5f5f5;
+
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.resposta:hover {
+    border-color: #333;
+}
+
+.resposta.selecionado {
+    border-color: #333;
+    background-color: #e9e9e9;
+}
+
+.resposta:disabled {
+    cursor: default;
+}
+
+
+/* RESULTADO */
+
+.resultado {
+    display: none;
+
+    margin-top: 40px;
+    padding: 35px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resultado h2 {
+    margin-bottom: 15px;
+}
+
+.resultado h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.resultado p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#link-resultado {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background-color: #333;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+#link-resultado:hover {
+    background-color: #555;
+}
+
+
+/* VOLTAR */
+
+.voltar {
+    display: block;
+
+    width: fit-content;
+
+    margin: 40px auto 0;
+
+    color: #333;
+
+    text-decoration: none;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .quiz-container > h1 {
+        font-size: 28px;
+    }
+
+    .pergunta {
+        padding: 20px;
+    }
+
+}
+    </style>
+</body>
+
+</html>
