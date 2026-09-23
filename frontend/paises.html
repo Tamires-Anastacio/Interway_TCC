@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Países Seguros para Intercâmbio - Interway</title>
+  <link rel="stylesheet" href="paises.css">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* ========================================================
+   PALETA COM TONALIDADE MAIS CLARA (ARJADO & CONFIÁVEL)
+   ======================================================== */
+:root {
+  --light-bg: #f5f9fd;          /* Fundo azul gelo muito claro */
+  --card-white: #ffffff;        /* Branco puro para cards */
+  --ocean-blue: #1b4f8a;        /* Azul marinho atenuado / oceano */
+  --sky-blue: #4ba3e3;          /* Azul celeste vivo */
+  --sky-hover: #328dd1;
+  --soft-blue-border: #dbeaf7;  /* Borda sutil */
+  --pill-bg: #e6f2fc;           /* Fundo de badges suaves */
+  --text-dark: #153250;         /* Texto legível e suave */
+  --text-muted: #627993;        /* Texto de apoio */
+  --safety-green: #10b981;      /* Destaque de segurança */
+  --radius-light: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================================
+   HEADER CLARO
+   ======================================================== */
+.header {
+  background-color: var(--card-white);
+  padding: 1.1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--soft-blue-border);
+  box-shadow: 0 4px 15px rgba(27, 79, 138, 0.04);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ocean-blue);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--sky-blue);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--sky-blue);
+}
+
+.btn-nav {
+  background: var(--pill-bg);
+  color: var(--ocean-blue) !important;
+  border: 1px solid var(--soft-blue-border);
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 700 !important;
+  transition: all 0.2s !important;
+}
+
+.btn-nav:hover {
+  background: var(--sky-blue);
+  color: #ffffff !important;
+}
+
+/* ========================================================
+   HERO BANNER COM TONALIDADE CLARA
+   ======================================================== */
+.hero-light {
+  background: linear-gradient(180deg, #e9f3fc 0%, var(--light-bg) 100%);
+  padding: 4.5rem 1rem 3rem 1rem;
+  text-align: center;
+}
+
+.safety-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: var(--ocean-blue);
+  border: 1px solid var(--soft-blue-border);
+  padding: 0.4rem 1.3rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(27, 79, 138, 0.06);
+  margin-bottom: 1.2rem;
+}
+
+.safety-pill i {
+  color: var(--safety-green);
+}
+
+.hero-light h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--ocean-blue);
+  margin-bottom: 0.6rem;
+}
+
+.hero-light p {
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ========================================================
+   FILTROS RÁPIDOS
+   ======================================================== */
+.main-content {
+  margin-bottom: 5rem;
+}
+
+.filter-strip {
+  background: var(--card-white);
+  padding: 1.2rem 1.8rem;
+  border-radius: var(--radius-light);
+  border: 1px solid var(--soft-blue-border);
+  box-shadow: 0 4px 15px rgba(27, 79, 138, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ocean-blue);
+}
+
+.buttons-filter {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--light-bg);
+  border: 1px solid var(--soft-blue-border);
+  color: var(--text-dark);
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--ocean-blue);
+  color: #ffffff;
+  border-color: var(--ocean-blue);
+}
+
+/* ========================================================
+   GRID DE CARDS DOS PAÍSES
+   ======================================================== */
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.country-card {
+  background: var(--card-white);
+  border-radius: var(--radius-light);
+  overflow: hidden;
+  border: 1px solid var(--soft-blue-border);
+  box-shadow: 0 6px 18px rgba(27, 79, 138, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(27, 79, 138, 0.1);
+  border-color: var(--sky-blue);
+}
+
+.card-cover {
+  position: relative;
+  height: 190px;
+  width: 100%;
+}
+
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.peace-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ffffff;
+  color: var(--ocean-blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.peace-badge i {
+  color: var(--safety-green);
+}
+
+.card-body {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  color: var(--ocean-blue);
+  font-weight: 800;
+}
+
+.continent {
+  font-size: 0.78rem;
+  background: var(--pill-bg);
+  color: var(--ocean-blue);
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+.desc-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.specs-grid {
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--soft-blue-border);
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spec-item i {
+  color: var(--sky-blue);
+  font-size: 1.1rem;
+}
+
+.spec-item div strong {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ocean-blue);
+}
+
+.spec-item div span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.btn-info {
+  width: 100%;
+  background: var(--pill-bg);
+  color: var(--ocean-blue);
+  border: 1px solid var(--soft-blue-border);
+  padding: 0.75rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-info:hover {
+  background: var(--ocean-blue);
+  color: #ffffff;
+}
+
+/* ========================================================
+   MODAL DE SEGURANÇA
+   ======================================================== */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 50, 80, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: var(--card-white);
+  width: 90%;
+  max-width: 580px;
+  border-radius: var(--radius-light);
+  padding: 2.2rem;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(27, 79, 138, 0.15);
+  animation: modalIn 0.25s ease-out;
+}
+
+@keyframes modalIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-header h2 {
+  color: var(--ocean-blue);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.safety-verified {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--safety-green);
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.modal-body {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ocean-blue);
+  margin-bottom: 0.2rem;
+}
+
+.modal-item p {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+
+.highlight-tip {
+  background: var(--pill-bg);
+  padding: 0.9rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--sky-blue);
+}
+
+.btn-cta-modal {
+  display: block;
+  text-align: center;
+  background: var(--ocean-blue);
+  color: #ffffff;
+  padding: 0.85rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.btn-cta-modal:hover {
+  background: var(--sky-blue);
+}
+
+/* ========================================================
+   RODAPÉ CLARO
+   ======================================================== */
+.footer-light {
+  background: var(--card-white);
+  border-top: 1px solid var(--soft-blue-border);
+  padding: 2rem 0;
+  color: var(--text-muted);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand h3 {
+  color: var(--ocean-blue);
+}
+
+.footer-brand span {
+  color: var(--sky-blue);
+}
+
+.footer-brand p, .copyright {
+  font-size: 0.85rem;
+}
+    </style>
+
+  <!-- Menu de Navegação (Paleta Clara) -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-plane-departure"></i> INTER<span>WAY</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="escolas.html">Escolas</a>
+        <a href="paises.html" class="active">Países Seguros</a>
+        <a href="planejamento.html">Planejamento</a>
+        <a href="chat.html" class="btn-nav">Falar com IA</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Hero Claro -->
+  <section class="hero-light">
+    <div class="container">
+      <div class="safety-pill">
+        <i class="fa-solid fa-shield-halved"></i> Baseado no Global Peace Index & Satisfação Estudantil
+      </div>
+      <h1>Destinos Mais Seguros e Indicados</h1>
+      <p>Estude com tranquilidade. Selecionamos os países com os menores índices de criminalidade, excelente acolhimento a estrangeiros e regras claras de visto.</p>
+    </div>
+  </section>
+
+  <main class="container main-content">
+
+    <!-- Filtros Rápidos -->
+    <section class="filter-strip">
+      <div class="filter-label"><i class="fa-solid fa-sliders"></i> Filtrar Destinos:</div>
+      <div class="buttons-filter" id="filtros-container">
+        <button class="filter-btn active" data-filter="all">Todos os Países</button>
+        <button class="filter-btn" data-filter="trabalho">💼 Permite Estudo & Trabalho</button>
+        <button class="filter-btn" data-filter="ingles">🗣️ Língua Inglesa</button>
+        <button class="filter-btn" data-filter="acessivel">💰 Custo-Benefício</button>
+      </div>
+    </section>
+
+    <!-- Grid de Países -->
+    <section class="countries-grid" id="grid-paises">
+
+      <!-- País 1: Irlanda -->
+      <article class="country-card" data-tags="trabalho ingles"
+               data-nome="Irlanda"
+               data-seguranca="Top 3 Global Peace Index"
+               data-trabalho="Sim, 20h/semana (Stamp 2)"
+               data-idioma="Inglês"
+               data-emergencia="112 ou 999 (Garda Síochána)"
+               data-dica="Dublin e cidades como Cork e Galway possuem comunidades receptivas e transporte seguro.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=700&auto=format&fit=crop" alt="Irlanda">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> Extremamente Seguro</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇮🇪 Irlanda</h3>
+            <span class="continent">Europa</span>
+          </div>
+
+          <p class="desc-text">Conhecida como 'Ilha Esmeralda', lidera rankings mundiais de segurança, acolhe intercambistas e oferece permissão legal de trabalho durante as aulas.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>20h por semana</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>Top 3 no Mundo</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Investimento:</strong>
+                <span>Médio</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+      <!-- País 2: Canadá -->
+      <article class="country-card" data-tags="trabalho ingles"
+               data-nome="Canadá"
+               data-seguranca="Top 11 no Mundo / Baixa Criminalidade"
+               data-trabalho="Sim (em programas de College e PGWP)"
+               data-idioma="Inglês & Francês"
+               data-emergencia="911 (Polícia e Resgate)"
+               data-dica="Cidades como Vancouver, Toronto e Montreal têm infraestrutura de primeiro mundo e policiamento comunitário presente.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1517935703635-27190760b798?q=80&w=700&auto=format&fit=crop" alt="Canadá">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> Qualidade de Vida Top</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇨🇦 Canadá</h3>
+            <span class="continent">América do Norte</span>
+          </div>
+
+          <p class="desc-text">Referência em multiculturalismo e respeito à diversidade. Oferece alta qualidade de vida, sistemas de saúde avançados e cidades planejadas.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>College & PGWP</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>Muito Alta</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Investimento:</strong>
+                <span>Médio a Alto</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+      <!-- País 3: Nova Zelândia -->
+      <article class="country-card" data-tags="trabalho ingles"
+               data-nome="Nova Zelândia"
+               data-seguranca="Top 2 Global Peace Index"
+               data-trabalho="Sim, 20h/semana para cursos de 14+ semanas"
+               data-idioma="Inglês"
+               data-emergencia="111 (Polícia / Bombeiros)"
+               data-dica="Praticamente livre de conflitos internacionais, baixíssimo índice de criminalidade e código de suporte rígido ao estudante estrangeiro.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=700&auto=format&fit=crop" alt="Nova Zelândia">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> 2º Mais Pacífico do Mundo</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇳🇿 Nova Zelândia</h3>
+            <span class="continent">Oceania</span>
+          </div>
+
+          <p class="desc-text">O Código de Prática do governo neozelandês obriga as escolas a prestarem suporte integral de moradia, saúde física e emocional aos intercambistas.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>20h por semana</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>2º do Mundo</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Investimento:</strong>
+                <span>Médio</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+      <!-- País 4: Austrália -->
+      <article class="country-card" data-tags="trabalho ingles"
+               data-nome="Austrália"
+               data-seguranca="Top Cidades Estudantis Mais Seguras"
+               data-trabalho="Sim, 48h quinzenais"
+               data-idioma="Inglês"
+               data-emergencia="000 (Emergências)"
+               data-dica="Salário mínimo mais alto do mundo para estudantes e proteção governamental contra abusos trabalhistas.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=700&auto=format&fit=crop" alt="Austrália">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> Cidades Mais Habitáveis</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇦🇺 Austrália</h3>
+            <span class="continent">Oceania</span>
+          </div>
+
+          <p class="desc-text">Melbourne e Sydney estão sempre no topo das cidades mais amigáveis do planeta. Excelente suporte de direitos trabalhistas para estudantes.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>48h / quinzena</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>Excelente</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Salário:</strong>
+                <span>O mais alto</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+      <!-- País 5: Japão -->
+      <article class="country-card" data-tags="trabalho"
+               data-nome="Japão"
+               data-seguranca="Uma das menores taxas de homicídio do planeta"
+               data-trabalho="Sim, até 28h/semana (com autorização especial)"
+               data-idioma="Japonês"
+               data-emergencia="110 (Polícia) e 119 (Bombeiros)"
+               data-dica="É comum esquecer itens em cafeterias ou trens e encontrá-los intactos na central de achados e perdidos.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=700&auto=format&fit=crop" alt="Japão">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> Crime Quase Nulo</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇯🇵 Japão</h3>
+            <span class="continent">Ásia</span>
+          </div>
+
+          <p class="desc-text">Líder incontestável em tranquilidade urbana. Andar sozinho à noite em cidades como Tóquio ou Quioto é uma experiência de segurança ímpar.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>Até 28h/semana</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>Nível Máximo</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Investimento:</strong>
+                <span>Bolsas MEXT</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+      <!-- País 6: Malta -->
+      <article class="country-card" data-tags="trabalho ingles acessivel"
+               data-nome="Malta"
+               data-seguranca="Ilha Europeia Pacífica e Turística"
+               data-trabalho="Sim, após a 13ª semana de estudos"
+               data-idioma="Inglês & Maltês"
+               data-emergencia="112 (Emergências UE)"
+               data-dica="País membro da União Europeia, clima ensolarado o ano inteiro e custos de curso inferiores aos de Londres ou Dublin.">
+        
+        <div class="card-cover">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=700&auto=format&fit=crop" alt="Malta">
+          <span class="peace-badge"><i class="fa-solid fa-check-shield"></i> Destino Europeu Acessível</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-header">
+            <h3>🇲🇹 Malta</h3>
+            <span class="continent">Europa (Mediterrâneo)</span>
+          </div>
+
+          <p class="desc-text">O melhor custo-benefício para aprender inglês na Europa. Ilha paradisíaca, segura, com visto facilitado para brasileiros e permissão de trabalho.</p>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <div>
+                <strong>Trabalho:</strong>
+                <span>A partir do 3º mês</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Segurança:</strong>
+                <span>Alta / Turismo</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-wallet"></i>
+              <div>
+                <strong>Investimento:</strong>
+                <span>Econômico</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-info" onclick="abrirModalSeguranca(this.closest('.country-card'))">
+            Ver Guia de Segurança & Visto
+          </button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Modal de Guia de Segurança do País -->
+  <div class="modal-backdrop" id="modal-pais">
+    <div class="modal-box">
+      <button class="btn-fechar" onclick="fecharModalPais()">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="modal-nome-pais">Nome do País</h2>
+        <span class="safety-verified"><i class="fa-solid fa-certificate"></i> Destino Validado pela Interway</span>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-item">
+          <strong><i class="fa-solid fa-award"></i> Índice de Segurança Oficial:</strong>
+          <p id="modal-seguranca-texto">-</p>
+        </div>
+        <div class="modal-item">
+          <strong><i class="fa-solid fa-briefcase"></i> Regras de Trabalho Legal:</strong>
+          <p id="modal-trabalho-texto">-</p>
+        </div>
+        <div class="modal-item">
+          <strong><i class="fa-solid fa-phone-volume"></i> Telefones de Emergência:</strong>
+          <p id="modal-emergencia-texto">-</p>
+        </div>
+        <div class="modal-item highlight-tip">
+          <strong><i class="fa-solid fa-lightbulb"></i> Dica de Convivência & Bairros:</strong>
+          <p id="modal-dica-texto">-</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="index.html#contato" class="btn-cta-modal">Simular Intercâmbio para este País</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé Claro e Limpo -->
+  <footer class="footer-light">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>INTER<span>WAY</span></h3>
+        <p>Destinos Seguros • Centro Paula Souza / ETEC MCM • Turma 3ºC</p>
+      </div>
+      <p class="copyright">&copy; 2026 Interway. Segurança e apoio em cada etapa.</p>
+    </div>
+  </footer>
+
+  <script src="paises.js"></script>
+</body>
+</html>

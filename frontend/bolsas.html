@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolsas de Estudo Universitárias - Interway</title>
+  <link rel="stylesheet" href="bolsas.css">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Ícones FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* ========================================================
+   NOVA PALETA ACADÊMICA: TONS RENOVADOS DE AZUL & BRANCO
+   ======================================================== */
+:root {
+  --uni-midnight: #0a192f;      /* Azul noite acadêmico profundo */
+  --uni-navy: #102a4e;          /* Azul marinho secundário */
+  --uni-royal: #1d4ed8;         /* Azul real dinâmico */
+  --uni-cyan: #0ea5e9;          /* Azul elétrico/ciano para destaques */
+  --uni-cyan-hover: #38bdf8;
+  --uni-ice: #f0f7ff;           /* Fundo azul gelo muito suave */
+  --uni-card-bg: #ffffff;       /* Branco puro */
+  --uni-text-dark: #0f172a;     /* Preto azulado para texto */
+  --uni-text-muted: #475569;    /* Cinza azulado */
+  --uni-border: #e2e8f0;
+  --radius-academic: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--uni-ice);
+  color: var(--uni-text-dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================================
+   MENU SUPERIOR
+   ======================================================== */
+.header {
+  background-color: var(--uni-midnight);
+  padding: 1.1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(14, 165, 233, 0.3);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--uni-cyan);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--uni-cyan);
+}
+
+.btn-nav {
+  background: linear-gradient(135deg, var(--uni-cyan), var(--uni-royal));
+  color: #ffffff !important;
+  padding: 0.45rem 1.3rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  transition: transform 0.2s !important;
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+}
+
+/* ========================================================
+   HERO BANNER (RENOVADO)
+   ======================================================== */
+.scholarship-hero {
+  background: radial-gradient(circle at top right, #102a4e, var(--uni-midnight));
+  color: #ffffff;
+  text-align: center;
+  padding: 4.5rem 1rem 5.5rem 1rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--uni-cyan);
+  border: 1px solid var(--uni-cyan);
+  padding: 0.35rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.scholarship-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.scholarship-hero p {
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.05rem;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-pill strong {
+  color: var(--uni-cyan);
+  font-size: 1.3rem;
+}
+
+.stat-pill span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* ========================================================
+   FILTROS E BUSCA
+   ======================================================== */
+.main-layout {
+  margin-top: -2.8rem;
+  margin-bottom: 5rem;
+}
+
+.filters-card {
+  background: var(--uni-card-bg);
+  border-radius: var(--radius-academic);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
+  border: 1px solid var(--uni-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--uni-ice);
+  padding: 0.85rem 1.4rem;
+  border-radius: 50px;
+  border: 1px solid #bfdbfe;
+}
+
+.search-input-wrapper i {
+  color: var(--uni-royal);
+}
+
+.search-input-wrapper input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip {
+  background: var(--uni-ice);
+  border: 1px solid #bfdbfe;
+  color: var(--uni-midnight);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover,
+.chip.active {
+  background: var(--uni-royal);
+  color: #ffffff;
+  border-color: var(--uni-royal);
+}
+
+/* ========================================================
+   GRID DE CARDS DE BOLSAS
+   ======================================================== */
+.scholarships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.scholarship-card {
+  background: var(--uni-card-bg);
+  border-radius: var(--radius-academic);
+  border: 1px solid var(--uni-border);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.scholarship-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px rgba(10, 25, 47, 0.12);
+  border-color: var(--uni-cyan);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--uni-border);
+}
+
+.type-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+.tag-full {
+  background-color: #dbeafe;
+  color: var(--uni-royal);
+}
+
+.tag-merit {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.country-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--uni-text-muted);
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  color: var(--uni-midnight);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.uni-name {
+  font-size: 0.9rem;
+  color: var(--uni-royal);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.coverage-box {
+  background-color: var(--uni-ice);
+  border: 1px solid #bfdbfe;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--uni-midnight);
+  margin-bottom: 1.2rem;
+}
+
+.coverage-box i {
+  color: var(--uni-cyan);
+  margin-top: 2px;
+}
+
+.meta-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--uni-text-muted);
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--uni-border);
+}
+
+.card-action {
+  padding: 1.2rem 1.5rem;
+  background: #ffffff;
+  border-top: 1px solid var(--uni-border);
+}
+
+.btn-detalhes {
+  width: 100%;
+  background-color: var(--uni-midnight);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-detalhes:hover {
+  background-color: var(--uni-cyan);
+  color: var(--uni-midnight);
+}
+
+/* ========================================================
+   MODAL DE DETALHES & CHECKLIST
+   ======================================================== */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  border-radius: var(--radius-academic);
+  padding: 2.2rem;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalScale 0.25s ease-out;
+}
+
+@keyframes modalScale {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  color: var(--uni-text-muted);
+  cursor: pointer;
+}
+
+.modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--uni-cyan);
+  background: var(--uni-ice);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: var(--uni-midnight);
+  margin-top: 0.5rem;
+}
+
+.modal-sub {
+  color: var(--uni-royal);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal-body {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-block {
+  font-size: 0.9rem;
+}
+
+.info-block strong {
+  display: block;
+  color: var(--uni-midnight);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-block {
+  background: var(--uni-ice);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--uni-cyan);
+}
+
+.checklist-dica {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #92400e;
+}
+
+.btn-action-modal {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, var(--uni-midnight), var(--uni-navy));
+  color: #ffffff;
+  padding: 0.85rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.3s;
+}
+
+.btn-action-modal:hover {
+  opacity: 0.9;
+}
+
+/* ========================================================
+   RODAPÉ
+   ======================================================== */
+.footer {
+  background-color: var(--uni-midnight);
+  color: #94a3b8;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+}
+
+.footer-brand span {
+  color: var(--uni-cyan);
+}
+    </style>
+
+  <!-- Menu de Navegação -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-graduation-cap"></i> INTER<span>WAY</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="escolas.html">Escolas</a>
+        <a href="bolsas.html" class="active">Bolsas Universitárias</a>
+        <a href="blog.html">Comunidade</a>
+        <a href="index.html#contato" class="btn-nav">Orientação</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Hero das Bolsas -->
+  <section class="scholarship-hero">
+    <div class="container">
+      <div class="hero-badge">
+        <i class="fa-solid fa-award"></i> Oportunidades Acadêmicas Globais
+      </div>
+      <h1>Bolsas de Estudo nas Melhores Universidades</h1>
+      <p>Mapeamos programas com bolsas de até 100% de isenção de mensalidade e subsídios para você cursar graduação ou pós-graduação no exterior.</p>
+
+      <div class="stats-row">
+        <div class="stat-pill">
+          <strong>100%</strong>
+          <span>Opções Integrais</span>
+        </div>
+        <div class="stat-pill">
+          <strong>+15 Países</strong>
+          <span>Destinos Elegíveis</span>
+        </div>
+        <div class="stat-pill">
+          <strong>Sem Taxas Ocultas</strong>
+          <span>Editais Transparentes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Central -->
+  <main class="container main-layout">
+
+    <!-- Barra de Busca e Filtros -->
+    <section class="filters-card">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="busca-bolsa" placeholder="Pesquisar por universidade, bolsa ou país...">
+      </div>
+
+      <div class="category-chips" id="filtros-categorias">
+        <button class="chip active" data-type="all">Todas as Oportunidades</button>
+        <button class="chip" data-type="integral">Bolsa 100% (Integral)</button>
+        <button class="chip" data-type="graduacao">Graduação</button>
+        <button class="chip" data-type="pos">Pós-Graduação / Mestrado</button>
+        <button class="chip" data-type="parcial">Parciais (Até 50%)</button>
+      </div>
+    </section>
+
+    <!-- Grid de Bolsas -->
+    <section class="scholarships-grid" id="bolsas-grid">
+
+      <!-- Bolsa 1: Lester B. Pearson (Toronto - Canadá) -->
+      <article class="scholarship-card" data-type="integral graduacao"
+               data-nome="Lester B. Pearson International Scholarship"
+               data-uni="Universidade de Toronto (U of T)"
+               data-pais="Canadá 🇨🇦"
+               data-nivel="Graduação Completa (Bachelor)"
+               data-valor="100% de isenção + Moradia + Livros + Custo de Vida"
+               data-requisitos="Destaque acadêmico, liderança comunitária, indicação da escola de ensino médio e proficiência (IELTS/TOEFL)."
+               data-prazo="Novembro / Anual">
+        
+        <div class="card-top">
+          <span class="type-tag tag-full"><i class="fa-solid fa-star"></i> 100% Integral</span>
+          <span class="country-name">🇨🇦 Canadá</span>
+        </div>
+
+        <div class="card-content">
+          <h3>Lester B. Pearson Scholarship</h3>
+          <h4 class="uni-name"><i class="fa-solid fa-building-columns"></i> Universidade de Toronto</h4>
+          <p class="description">A bolsa mais prestigiada do Canadá para estudantes internacionais de alto rendimento acadêmico e impacto social.</p>
+
+          <div class="coverage-box">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Cobertura:</strong> Mensalidade total, acomodação e auxílio anual.</span>
+          </div>
+
+          <div class="meta-details">
+            <div><i class="fa-regular fa-clock"></i> <strong>Inscrições:</strong> Até Nov</div>
+            <div><i class="fa-solid fa-user-graduate"></i> <strong>Nível:</strong> Graduação</div>
+          </div>
+        </div>
+
+        <div class="card-action">
+          <button class="btn-detalhes" onclick="abrirModalBolsa(this.closest('.scholarship-card'))">
+            Ver Requisitos & Edital
+          </button>
+        </div>
+      </article>
+
+      <!-- Bolsa 2: Chevening Scholarships (Reino Unido) -->
+      <article class="scholarship-card" data-type="integral pos"
+               data-nome="Chevening Scholarships"
+               data-uni="Qualquer Universidade do Reino Unido"
+               data-pais="Reino Unido 🇬🇧"
+               data-nivel="Mestrado de 1 Ano (Master's Degree)"
+               data-valor="Passagem de ida e volta, mensalidade 100% paga e estipêndio mensal de subsistência"
+               data-requisitos="Diploma de graduação, mínimo de 2 anos de experiência profissional e perfil de liderança comprovado."
+               data-prazo="Outubro / Novembro Anual">
+
+        <div class="card-top">
+          <span class="type-tag tag-full"><i class="fa-solid fa-crown"></i> Bolsa do Governo</span>
+          <span class="country-name">🇬🇧 Reino Unido</span>
+        </div>
+
+        <div class="card-content">
+          <h3>Cheve
