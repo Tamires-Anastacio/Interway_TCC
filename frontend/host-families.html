@@ -7,25 +7,465 @@
 
     <title>Host Families | InterWay</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf1fa;
+            color: #143d75;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           BOTÃO VOLTAR
+        ========================= */
+
+        .voltar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #143d75;
+            color: white;
+
+            border-radius: 50%;
+
+            text-decoration: none;
+
+            font-size: 25px;
+            font-weight: bold;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+            transition: 0.3s;
+
+            z-index: 1000;
+        }
+
+        .voltar:hover {
+            background-color: #7ea2d6;
+            color: #143d75;
+
+            transform: translateX(-4px);
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background-color: #143d75;
+
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        header > a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 1.7rem;
+            font-weight: bold;
+
+            margin-left: 55px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7ea2d6;
+        }
+
+
+        /* =========================
+           INTRODUÇÃO
+        ========================= */
+
+        .introducao {
+            text-align: center;
+
+            padding: 80px 20px 60px;
+
+            background-color: #143d75;
+
+            color: white;
+        }
+
+        .introducao h1 {
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+        }
+
+        .introducao p {
+            max-width: 750px;
+
+            margin: 0 auto;
+
+            font-size: 1.1rem;
+
+            color: #dce6f5;
+        }
+
+
+        /* =========================
+           SOBRE HOST FAMILY
+        ========================= */
+
+        .sobre-host {
+            max-width: 900px;
+
+            margin: 50px auto;
+
+            padding: 35px;
+
+            text-align: center;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 6px 16px rgba(20, 61, 117, 0.12);
+        }
+
+        .sobre-host h2 {
+            color: #143d75;
+
+            margin-bottom: 15px;
+
+            font-size: 1.8rem;
+        }
+
+        .sobre-host p {
+            color: #556c8d;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FAMÍLIAS
+        ========================= */
+
+        .familias {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 30px 20px 60px;
+        }
+
+        .familias h2 {
+            text-align: center;
+
+            margin-bottom: 35px;
+
+            font-size: 2rem;
+
+            color: #143d75;
+        }
+
+        .cards-familias {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .card-familia {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 6px 16px rgba(20, 61, 117, 0.12);
+
+            border: 2px solid transparent;
+
+            transition: all 0.3s ease;
+        }
+
+        .card-familia:hover {
+            transform: translateY(-7px);
+
+            border-color: #7ea2d6;
+
+            box-shadow: 0 12px 25px rgba(20, 61, 117, 0.2);
+        }
+
+        .card-familia h3 {
+            color: #143d75;
+
+            font-size: 1.3rem;
+
+            margin-bottom: 15px;
+        }
+
+        .card-familia p {
+            color: #556c8d;
+
+            line-height: 1.6;
+        }
+
+        .card-familia a {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 10px 18px;
+
+            background-color: #143d75;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .card-familia a:hover {
+            background-color: #7ea2d6;
+
+            color: #143d75;
+        }
+
+
+        /* =========================
+           COMO FUNCIONA
+        ========================= */
+
+        .informacoes {
+            background-color: #143d75;
+
+            color: white;
+
+            padding: 70px 20px;
+        }
+
+        .informacoes h2 {
+            text-align: center;
+
+            font-size: 2rem;
+
+            margin-bottom: 40px;
+        }
+
+        .etapas {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .etapas > div {
+            background-color: rgba(255, 255, 255, 0.08);
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .etapas h3 {
+            color: #7ea2d6;
+
+            margin-bottom: 15px;
+        }
+
+        .etapas p {
+            color: #dce6f5;
+        }
+
+
+        /* =========================
+           RODAPÉ / VOLTAR
+        ========================= */
+
+        .final {
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        .final a {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background-color: #143d75;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .final a:hover {
+            background-color: #7ea2d6;
+
+            color: #143d75;
+        }
+
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+
+                padding: 20px;
+
+                gap: 15px;
+            }
+
+            header > a {
+                margin-left: 0;
+            }
+
+            .introducao h1 {
+                font-size: 2.3rem;
+            }
+
+            .cards-familias {
+                grid-template-columns: 1fr;
+            }
+
+            .etapas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            body {
+                font-size: 15px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .introducao {
+                padding: 60px 20px 50px;
+            }
+
+            .introducao h1 {
+                font-size: 2rem;
+            }
+
+            .sobre-host {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+
+            .voltar {
+                width: 43px;
+                height: 43px;
+
+                top: 15px;
+                left: 15px;
+
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- =========================
+         SETA PARA VOLTAR AO MENU
+    ========================= -->
+
+    <a href="index.html" class="voltar" title="Voltar ao menu">
+        ←
+    </a>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
     <header>
-        <a href="index.html">InterWay</a>
+
+        <a href="index.html">
+            InterWay
+        </a>
 
         <nav>
             <a href="index.html">Início</a>
             <a href="mais.html">Mais</a>
         </nav>
+
     </header>
 
 
     <main>
 
-        <!-- Introdução -->
+        <!-- =========================
+             INTRODUÇÃO
+        ========================= -->
+
         <section class="introducao">
 
             <h1>Host Families</h1>
@@ -38,7 +478,10 @@
         </section>
 
 
-        <!-- O que é -->
+        <!-- =========================
+             SOBRE
+        ========================= -->
+
         <section class="sobre-host">
 
             <h2>O que é uma Host Family?</h2>
@@ -53,7 +496,10 @@
         </section>
 
 
-        <!-- Opções -->
+        <!-- =========================
+             OPÇÕES
+        ========================= -->
+
         <section class="familias">
 
             <h2>Encontre uma família</h2>
@@ -61,6 +507,7 @@
             <div class="cards-familias">
 
                 <div class="card-familia">
+
                     <h3>🏠 Família anfitriã</h3>
 
                     <p>
@@ -68,11 +515,15 @@
                         sua rotina e cultura.
                     </p>
 
-                    <a href="#">Ver famílias</a>
+                    <a href="#">
+                        Ver famílias
+                    </a>
+
                 </div>
 
 
                 <div class="card-familia">
+
                     <h3>🍽️ Hospedagem com refeições</h3>
 
                     <p>
@@ -80,11 +531,15 @@
                         incluem refeições durante sua estadia.
                     </p>
 
-                    <a href="#">Ver famílias</a>
+                    <a href="#">
+                        Ver famílias
+                    </a>
+
                 </div>
 
 
                 <div class="card-familia">
+
                     <h3>🌎 Experiência cultural</h3>
 
                     <p>
@@ -92,11 +547,15 @@
                         com uma família do país escolhido.
                     </p>
 
-                    <a href="#">Ver famílias</a>
+                    <a href="#">
+                        Ver famílias
+                    </a>
+
                 </div>
 
 
                 <div class="card-familia">
+
                     <h3>🗣️ Prática de idiomas</h3>
 
                     <p>
@@ -104,7 +563,10 @@
                         reais de convivência.
                     </p>
 
-                    <a href="#">Ver famílias</a>
+                    <a href="#">
+                        Ver famílias
+                    </a>
+
                 </div>
 
             </div>
@@ -112,7 +574,10 @@
         </section>
 
 
-        <!-- Como funciona -->
+        <!-- =========================
+             COMO FUNCIONA
+        ========================= -->
+
         <section class="informacoes">
 
             <h2>Como funciona?</h2>
@@ -153,106 +618,19 @@
         </section>
 
 
-        <!-- Voltar -->
-        <a href="mais.html">← Voltar para Mais</a>
+        <!-- =========================
+             VOLTAR
+        ========================= -->
+
+        <div class="final">
+
+            <a href="mais.html">
+                ← Voltar para Mais
+            </a>
+
+        </div>
 
     </main>
-
-    <style>
-        .sobre-host {
-    max-width: 900px;
-    margin: 20px auto 50px;
-    padding: 30px;
-    text-align: center;
-
-    background-color: white;
-    border-radius: 15px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.sobre-host h2 {
-    margin-bottom: 15px;
-}
-
-.sobre-host p {
-    color: #666;
-    line-height: 1.7;
-}
-
-
-/* FAMÍLIAS */
-
-.familias {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-.familias h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.cards-familias {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.card-familia {
-    background-color: white;
-
-    padding: 30px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    transition: 0.2s;
-}
-
-.card-familia:hover {
-    transform: translateY(-5px);
-}
-
-.card-familia h3 {
-    font-size: 21px;
-    margin-bottom: 15px;
-}
-
-.card-familia p {
-    color: #666;
-    line-height: 1.5;
-}
-
-.card-familia a {
-    display: inline-block;
-
-    margin-top: 15px;
-    padding: 10px 18px;
-
-    background-color: #333;
-    color: white;
-
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.card-familia a:hover {
-    background-color: #555;
-}
-
-
-/* RESPONSIVO */
-
-@media (max-width: 700px) {
-
-    .cards-familias {
-        grid-template-columns: 1fr;
-    }
-}
-    </style>
 
 </body>
 
