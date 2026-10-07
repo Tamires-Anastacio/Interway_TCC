@@ -30,8 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         } catch (PDOException $e) {
 
-            $mensagem_erro = "Erro ao salvar a mensagem: " . $e->getMessage();
+            // E-mail já cadastrado
+            if ($e->errorInfo[1] == 1062) {
 
+                $mensagem_erro = "⚠️ Este e-mail já foi utilizado. Digite outro e-mail.";
+
+            } else {
+
+                $mensagem_erro = "Erro ao enviar a mensagem. Tente novamente.";
+
+            }
         }
 
     } else {
