@@ -1,13 +1,20 @@
+<?php
+// Página "Mais" da plataforma InterWay
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mais | InterWay</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +34,9 @@
         ========================= */
 
         .voltar {
+
             position: fixed;
+
             top: 25px;
             left: 25px;
 
@@ -42,6 +51,7 @@
             color: white;
 
             border-radius: 50%;
+
             text-decoration: none;
 
             font-size: 25px;
@@ -55,8 +65,11 @@
         }
 
         .voltar:hover {
+
             background-color: #7ea2d6;
+
             color: #143d75;
+
             transform: translateX(-4px);
         }
 
@@ -65,10 +78,13 @@
         ========================= */
 
         h1 {
+
             text-align: center;
+
             margin: 20px 0 45px;
 
             font-size: 2.4rem;
+
             color: #143d75;
         }
 
@@ -81,17 +97,22 @@
         ========================= */
 
         .opcoes {
+
             width: 90%;
+
             max-width: 1100px;
+
             margin: 0 auto;
 
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
 
             gap: 25px;
         }
 
         .box-opcao {
+
             background-color: white;
 
             padding: 30px;
@@ -101,6 +122,7 @@
             border-radius: 20px;
 
             text-decoration: none;
+
             color: #143d75;
 
             box-shadow: 0 6px 16px rgba(20, 61, 117, 0.12);
@@ -110,11 +132,14 @@
             transition: all 0.3s ease;
 
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
         }
 
         .box-opcao:hover {
+
             transform: translateY(-8px);
 
             border-color: #7ea2d6;
@@ -123,6 +148,7 @@
         }
 
         .box-opcao h2 {
+
             margin-bottom: 15px;
 
             font-size: 1.35rem;
@@ -131,6 +157,7 @@
         }
 
         .box-opcao p {
+
             color: #556c8d;
 
             font-size: 0.95rem;
@@ -143,101 +170,195 @@
         ========================= */
 
         @media (max-width: 900px) {
+
             .opcoes {
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
 
         @media (max-width: 600px) {
+
             body {
                 padding: 30px 15px;
             }
 
             h1 {
+
                 font-size: 1.9rem;
+
                 margin-top: 45px;
             }
 
             .opcoes {
+
                 grid-template-columns: 1fr;
+
                 width: 100%;
             }
 
             .voltar {
+
                 top: 15px;
+
                 left: 15px;
 
                 width: 45px;
+
                 height: 45px;
 
                 font-size: 22px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- Botão para voltar ao menu -->
-    <a href="index.html" class="voltar" title="Voltar ao menu">
+    <!-- =========================
+         BOTÃO VOLTAR
+    ========================= -->
+
+    <a href="index.php"
+       class="voltar"
+       title="Voltar ao menu">
+
         ←
+
     </a>
 
-    <!-- Título -->
+
+    <!-- =========================
+         TÍTULO
+    ========================= -->
+
     <h1>
-        Explore nossas <span>opções</span>
+
+        Explore nossas
+        <span>opções</span>
+
     </h1>
 
-    <!-- Opções -->
+
+    <!-- =========================
+         OPÇÕES
+    ========================= -->
+
     <div class="opcoes">
 
-        <a href="bolsas.html" class="box-opcao">
-            <h2>Bolsas de Estudos</h2>
+
+        <!-- Bolsas -->
+
+        <a href="bolsas.php"
+           class="box-opcao">
+
+            <h2>
+                Bolsas de Estudos
+            </h2>
+
             <p>
                 Encontre oportunidades de bolsas de estudos.
             </p>
+
         </a>
 
-        <a href="idiomas.html" class="box-opcao">
-            <h2>Intercâmbio de Idiomas</h2>
+
+        <!-- Idiomas -->
+
+        <a href="idiomas.php"
+           class="box-opcao">
+
+            <h2>
+                Intercâmbio de Idiomas
+            </h2>
+
             <p>
                 Aprenda um novo idioma vivendo no exterior.
             </p>
+
         </a>
 
-        <a href="trabalho.html" class="box-opcao">
-            <h2>Intercâmbio a Trabalho</h2>
+
+        <!-- Trabalho -->
+
+        <a href="trabalho.php"
+           class="box-opcao">
+
+            <h2>
+                Intercâmbio a Trabalho
+            </h2>
+
             <p>
                 Encontre oportunidades de trabalho no exterior.
             </p>
+
         </a>
 
-        <a href="host-families.html" class="box-opcao">
-            <h2>Host Families</h2>
+
+        <!-- Host Families -->
+
+        <a href="host-families.php"
+           class="box-opcao">
+
+            <h2>
+                Host Families
+            </h2>
+
             <p>
                 Encontre famílias para sua experiência de intercâmbio.
             </p>
+
         </a>
 
-        <a href="highschool.html" class="box-opcao">
-            <h2>High School</h2>
+
+        <!-- High School -->
+
+        <a href="highschool.php"
+           class="box-opcao">
+
+            <h2>
+                High School
+            </h2>
+
             <p>
                 Faça o ensino médio em outro país.
             </p>
+
         </a>
 
-        <a href="quiz.html" class="box-opcao">
-            <h2>Quiz</h2>
+
+        <!-- Quiz -->
+
+        <a href="quiz.php"
+           class="box-opcao">
+
+            <h2>
+                Quiz
+            </h2>
+
             <p>
                 Descubra mais sobre seu perfil de intercâmbio.
             </p>
+
         </a>
 
-        <a href="chats.html" class="box-opcao">
-            <h2>Chat</h2>
+
+        <!-- Chat -->
+
+        <a href="chats.php"
+           class="box-opcao">
+
+            <h2>
+                Chat
+            </h2>
+
             <p>
-                Tire suas dúvidas e se comunique com intercambiistas.          
-          </p>
+                Tire suas dúvidas e se comunique com intercambistas.
+            </p>
+
         </a>
 
 
@@ -246,4 +367,3 @@
 </body>
 
 </html>
- 
