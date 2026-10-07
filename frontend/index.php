@@ -1,22 +1,46 @@
 <?php
-// ======================================================
-// PROCESSAMENTO DO FORMULÁRIO DE CONTATO
-// ======================================================
+
+require_once "../backend/conexao.php";
 
 $mensagem_sucesso = "";
+$mensagem_erro = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $nome = htmlspecialchars(trim($_POST["nome"] ?? ""));
-    $email = htmlspecialchars(trim($_POST["email"] ?? ""));
-    $mensagem = htmlspecialchars(trim($_POST["mensagem"] ?? ""));
+    $nome = trim($_POST["nome"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $mensagem = trim($_POST["mensagem"] ?? "");
 
     if (!empty($nome) && !empty($email) && !empty($mensagem)) {
-        $mensagem_sucesso = "Mensagem enviada com sucesso!";
+
+        try {
+
+            $sql = "INSERT INTO mensagens (nome, email, mensagem)
+                    VALUES (:nome, :email, :mensagem)";
+
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->execute([
+                ":nome" => $nome,
+                ":email" => $email,
+                ":mensagem" => $mensagem
+            ]);
+
+            $mensagem_sucesso = "Mensagem enviada com sucesso!";
+
+        } catch (PDOException $e) {
+
+            $mensagem_erro = "Erro ao salvar a mensagem: " . $e->getMessage();
+
+        }
+
+    } else {
+
+        $mensagem_erro = "Preencha todos os campos.";
+
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
