@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/09/2026 às 21:18
+-- Tempo de geração: 07/10/2026 às 17:26
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -50,6 +50,35 @@ INSERT INTO `anotacoes_planejamento` (`id`, `usuario_id`, `titulo`, `categoria`,
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `bolsas`
+--
+
+CREATE TABLE `bolsas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `universidade` varchar(200) NOT NULL,
+  `pais` varchar(100) NOT NULL,
+  `nivel` varchar(100) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `valor` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
+  `requisitos` text NOT NULL,
+  `prazo` varchar(100) NOT NULL,
+  `link_edital` varchar(500) DEFAULT NULL,
+  `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `bolsas`
+--
+
+INSERT INTO `bolsas` (`id`, `nome`, `universidade`, `pais`, `nivel`, `tipo`, `valor`, `descricao`, `requisitos`, `prazo`, `link_edital`, `data_cadastro`) VALUES
+(1, 'Lester B. Pearson International Scholarship', 'Universidade de Toronto', 'Canadá', 'Graduação', 'integral', '100% de isenção + Moradia + Livros + Custo de Vida', 'Bolsa para estudantes internacionais com excelente desempenho acadêmico e impacto social.', 'Destaque acadêmico, liderança comunitária, indicação da escola e proficiência em inglês.', 'Novembro / Anual', 'https://future.utoronto.ca/pearson/', '2026-10-07 15:06:14'),
+(2, 'Chevening Scholarships', 'Universidades do Reino Unido', 'Reino Unido', 'Mestrado', 'integral', 'Mensalidade + Passagem + Auxílio de subsistência', 'Programa de bolsas do governo britânico para estudantes internacionais.', 'Diploma de graduação, experiência profissional e perfil de liderança.', 'Outubro / Novembro', 'https://www.chevening.org/', '2026-10-07 15:06:14');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `bolsas_estudo`
 --
 
@@ -65,14 +94,6 @@ CREATE TABLE `bolsas_estudo` (
   `requisitos` text NOT NULL,
   `prazo_inscricao` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `bolsas_estudo`
---
-
-INSERT INTO `bolsas_estudo` (`id`, `nome_bolsa`, `universidade`, `pais`, `nivel`, `tipo_cobertura`, `descricao`, `valor_cobertura`, `requisitos`, `prazo_inscricao`) VALUES
-(1, 'Lester B. Pearson', 'Universidade de Toronto', 'Canadá', 'Graduação', 'integral', 'Bolsa para alunos de alto rendimento acadêmico e liderança.', '100% isenção + moradia + livros', 'Histórico exemplar, redação e IELTS/TOEFL', 'Novembro'),
-(2, 'Chevening Scholarship', 'Universidades do Reino Unido', 'Reino Unido', 'Mestrado', 'integral', 'Programa oficial do governo britânico para líderes globais.', 'Passagem + 100% de mensalidade + estipêndio mensal', 'Graduação completa e 2 anos de experiência', 'Outubro a Novembro');
 
 -- --------------------------------------------------------
 
@@ -160,6 +181,28 @@ INSERT INTO `escolas_parceiras` (`id`, `nome`, `pais`, `cidade`, `descricao`, `c
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `mensagens`
+--
+
+CREATE TABLE `mensagens` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `mensagem` text NOT NULL,
+  `data_envio` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `mensagens`
+--
+
+INSERT INTO `mensagens` (`id`, `nome`, `email`, `mensagem`, `data_envio`) VALUES
+(1, 'Yigona', 'tamiresanastaciodefreitas283@gmail.com', 'tudo numa boa', '2026-10-07 14:53:12'),
+(6, 'Luís', 'luis8234@gmail.com', 'Isso já aconteceu comigo também gente', '2026-10-07 14:59:37');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `paises_seguros`
 --
 
@@ -204,6 +247,55 @@ CREATE TABLE `posts_blog` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `publicacoes`
+--
+
+CREATE TABLE `publicacoes` (
+  `id` int(11) NOT NULL,
+  `autor` varchar(100) NOT NULL,
+  `destino` varchar(150) NOT NULL,
+  `legenda` text NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `data_publicacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `publicacoes`
+--
+
+INSERT INTO `publicacoes` (`id`, `autor`, `destino`, `legenda`, `foto`, `data_publicacao`) VALUES
+(1, 'Lorena', 'Bangladesh', 'Eu comi vários morcegos. A culinária é muito rica em proteínas. A paisagem é muito bela também.', 'uploads/foto_6ac656c8176480.74338658.jpg', '2026-10-07 14:27:20');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `resultados_quiz`
+--
+
+CREATE TABLE `resultados_quiz` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
+  `clima` varchar(50) NOT NULL,
+  `objetivo` varchar(100) NOT NULL,
+  `idioma` varchar(100) NOT NULL,
+  `experiencia` varchar(100) NOT NULL,
+  `orcamento` varchar(50) NOT NULL,
+  `pais_recomendado` varchar(100) NOT NULL,
+  `data_resultado` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `resultados_quiz`
+--
+
+INSERT INTO `resultados_quiz` (`id`, `nome`, `clima`, `objetivo`, `idioma`, `experiencia`, `orcamento`, `pais_recomendado`, `data_resultado`) VALUES
+(1, NULL, 'ameno', 'trabalhar', 'ingles', 'aventura', 'medio', 'Irlanda', '2026-10-07 14:44:10'),
+(2, NULL, 'quente', 'turismo', 'quero-aprender', 'aventura', 'medio', 'Austrália', '2026-10-07 14:44:21'),
+(3, NULL, 'frio', 'turismo', 'ingles', 'academica', 'baixo', 'Canadá', '2026-10-07 14:45:14');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuarios`
 --
 
@@ -225,7 +317,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`, `destino_interesse`, `foto_perfil`, `data_cadastro`) VALUES
 (1, 'Sophia Gonçalves', 'sophia@etec.sp.gov.br', '123456', 'futuro', 'Canadá', 'default_avatar.png', '2026-09-23 19:03:47'),
 (2, 'Gabriel Souza', 'gabriel@etec.sp.gov.br', '123456', 'veterano', 'Irlanda', 'default_avatar.png', '2026-09-23 19:03:47'),
-(3, 'Lucas Pedroso', 'lucas@etec.sp.gov.br', '123456', 'veterano', 'Canadá', 'default_avatar.png', '2026-09-23 19:03:47');
+(3, 'Lucas Pedroso', 'lucas@etec.sp.gov.br', '123456', 'veterano', 'Canadá', 'default_avatar.png', '2026-09-23 19:03:47'),
+(4, 'Lorrayne', 'tamiresanastaciodefreitas283@gmail.com', '$2y$10$0IFcXGlExE0xfv2217C/le72U2bLl02et2hLeX7.p.DaV8FkNmyg2', 'futuro', NULL, 'default_avatar.png', '2026-10-07 15:24:50');
 
 --
 -- Índices para tabelas despejadas
@@ -237,6 +330,12 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`, `destino_interes
 ALTER TABLE `anotacoes_planejamento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Índices de tabela `bolsas`
+--
+ALTER TABLE `bolsas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `bolsas_estudo`
@@ -278,6 +377,13 @@ ALTER TABLE `escolas_parceiras`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `mensagens`
+--
+ALTER TABLE `mensagens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_email` (`email`);
+
+--
 -- Índices de tabela `paises_seguros`
 --
 ALTER TABLE `paises_seguros`
@@ -289,6 +395,18 @@ ALTER TABLE `paises_seguros`
 ALTER TABLE `posts_blog`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Índices de tabela `publicacoes`
+--
+ALTER TABLE `publicacoes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `resultados_quiz`
+--
+ALTER TABLE `resultados_quiz`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `usuarios`
@@ -305,6 +423,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `anotacoes_planejamento`
 --
 ALTER TABLE `anotacoes_planejamento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `bolsas`
+--
+ALTER TABLE `bolsas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -344,6 +468,12 @@ ALTER TABLE `escolas_parceiras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de tabela `mensagens`
+--
+ALTER TABLE `mensagens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de tabela `paises_seguros`
 --
 ALTER TABLE `paises_seguros`
@@ -356,10 +486,22 @@ ALTER TABLE `posts_blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `publicacoes`
+--
+ALTER TABLE `publicacoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `resultados_quiz`
+--
+ALTER TABLE `resultados_quiz`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para tabelas despejadas
