@@ -536,7 +536,7 @@
 
                 </ul>
 
-                <a href="chat_comunidade.php" class="access-button">
+                <a href="planos.php" class="access-button">
 
                     <i class="fa-solid fa-arrow-right"></i>
 
