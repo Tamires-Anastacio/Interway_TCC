@@ -361,6 +361,20 @@
 
         </a>
 
+        <a href="escolas.php"
+           class="box-opcao">
+
+            <h2>
+                Escolas de idioma
+            </h2>
+
+            <p>
+                Cursos de idiomas profissionalizantes.
+            </p>
+
+        </a>
+
+
 
     </div>
 
