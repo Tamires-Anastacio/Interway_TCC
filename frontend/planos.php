@@ -1024,13 +1024,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         name="plano"
                         value="InterWay Premium"
                     >
-
-                    <button
-                        type="submit"
-                        class="botao-plano"
-                    >
-                        Escolher Premium
-                    </button>
+                    
+                   <a href="pagamento.php?plano=plus" class="botao-plano">
+                        Escolher Plus
+                    </a>
 
                 </form>
 
