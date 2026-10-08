@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          * para verificar o e-mail e a senha do usuário.
          */
 
-        $erro = "Login ainda não conectado ao banco de dados.";
+        $erro = "Login não encontrado.";
     }
 }
 ?>
