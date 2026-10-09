@@ -941,6 +941,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </ul>
 
                 <form method="POST">
+                    
 
                     <input
                         type="hidden"
@@ -952,7 +953,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         type="submit"
                         class="botao-plano"
                     >
+                     <a href="pagamento.php?plano=plus" class="botao-plano">
                         Escolher Plus
+                    </a>
+
+                        
                     </button>
 
                 </form>
