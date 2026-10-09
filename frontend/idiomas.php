@@ -506,7 +506,7 @@
 
                 <div class="card-pais">
 
-                    <h3>🇨🇦 Canadá</h3>
+                    <h3>Canadá</h3>
 
                     <p>
                         Estude inglês ou francês em um ambiente multicultural.
@@ -521,7 +521,7 @@
 
                 <div class="card-pais">
 
-                    <h3>🇫🇷 França</h3>
+                    <h3>França</h3>
 
                     <p>
                         Aprenda francês e conheça a cultura francesa.
@@ -536,7 +536,7 @@
 
                 <div class="card-pais">
 
-                    <h3>🇩🇪 Alemanha</h3>
+                    <h3>Alemanha</h3>
 
                     <p>
                         Estude alemão e tenha uma experiência na Europa.
@@ -551,7 +551,7 @@
 
                 <div class="card-pais">
 
-                    <h3>🇪🇸 Espanha</h3>
+                    <h3>Espanha</h3>
 
                     <p>
                         Aprenda espanhol e explore a cultura espanhola.
@@ -621,7 +621,7 @@
 
         <!-- VOLTAR -->
 
-        <a href="mais.html">
+        <a href="mais.php">
             ← Voltar para Mais
         </a>
 
