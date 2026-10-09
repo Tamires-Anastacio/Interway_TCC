@@ -1127,19 +1127,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </html>
 
-Como ligar essa página aos botões
-
-No seu planos.php, troque os botões pelos links correspondentes:
-
-<a href="pagamento.php?plano=explorador" class="botao-plano">
-    Começar grátis
-</a>
-
-<a href="pagamento.php?plano=plus" class="botao-plano">
-    Escolher Plus
-</a>
-
-<a href="pagamento.php?plano=premium" class="botao-plano">
-    Escolher Premium
-</a>
 
